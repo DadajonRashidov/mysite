@@ -1,0 +1,16 @@
+@import "../../assets/styles/settings";
+.pagenotfound-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  height: 500px;
+  font-size: 30px;
+  color: $dark;
+  p {
+    color: $dark;
+  }
+}

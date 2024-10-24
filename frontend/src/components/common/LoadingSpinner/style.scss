@@ -1,0 +1,194 @@
+
+
+.spinner-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    &.offset {
+        position: relative;
+        background-color: transparent;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-color: black;
+        box-shadow: inset 5px 5px 50px darkorange, inset -5px -5px 50px darkorange;
+    }
+
+    .fulfilling-bouncing-circle-spinner {
+        height: 60px;
+        width: 60px;
+        position: relative;
+        animation: fulfilling-bouncing-circle-spinner-animation infinite 4000ms ease;
+
+        .orbit {
+            height: 60px;
+            width: 60px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            border: calc(60px * 0.03) solid orange;
+            animation: fulfilling-bouncing-circle-spinner-orbit-animation infinite 4000ms ease;
+        }
+
+        .circle {
+            height: 60px;
+            width: 60px;
+            color: orange;
+            display: block;
+            border-radius: 50%;
+            position: relative;
+            border: calc(60px * 0.1) solid orange;
+            animation: fulfilling-bouncing-circle-spinner-circle-animation infinite 4000ms ease;
+            transform: rotate(0deg) scale(1);
+        }
+    }
+}
+
+
+@keyframes fulfilling-bouncing-circle-spinner-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fulfilling-bouncing-circle-spinner-orbit-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    62.5% {
+        transform: scale(0.8);
+    }
+
+    75% {
+        transform: scale(1);
+    }
+
+    87.5% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fulfilling-bouncing-circle-spinner-circle-animation {
+    0% {
+        transform: scale(1);
+        border-color: transparent;
+        border-top-color: inherit;
+    }
+
+    16.7% {
+        border-color: transparent;
+        border-top-color: initial;
+        border-right-color: initial;
+    }
+
+    33.4% {
+        border-color: transparent;
+        border-top-color: inherit;
+        border-right-color: inherit;
+        border-bottom-color: inherit;
+    }
+
+    50% {
+        border-color: inherit;
+        transform: scale(1);
+    }
+
+    62.5% {
+        border-color: inherit;
+        transform: scale(1.4);
+    }
+
+    75% {
+        border-color: inherit;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    87.5% {
+        border-color: inherit;
+        transform: scale(1.4);
+    }
+
+    100% {
+        border-color: transparent;
+        border-top-color: inherit;
+        transform: scale(1);
+    }
+}
+
+
+
+.looping-rhombuses-spinner,
+.looping-rhombuses-spinner * {
+    box-sizing: border-box;
+}
+
+.looping-rhombuses-spinner {
+    width: calc(25px * 4);
+    height: 25px;
+    position: relative;
+}
+
+.looping-rhombuses-spinner .rhombus {
+    height: 25px;
+    width: 25px;
+    background-color: orange;
+    box-shadow: 3px 3px 30px orange, -3px -3px 30px orange;
+    left: calc(25px * 4);
+    position: absolute;
+    margin: 0 auto;
+    border-radius: 2px;
+    transform: translateY(0) rotate(45deg) scale(0);
+    animation: looping-rhombuses-spinner-animation 2500ms linear infinite;
+}
+
+.looping-rhombuses-spinner .rhombus:nth-child(1) {
+    animation-delay: calc(2500ms * 1 / -1.5);
+}
+
+.looping-rhombuses-spinner .rhombus:nth-child(2) {
+    animation-delay: calc(2500ms * 2 / -1.5);
+}
+
+.looping-rhombuses-spinner .rhombus:nth-child(3) {
+    animation-delay: calc(2500ms * 3 / -1.5);
+}
+
+@keyframes looping-rhombuses-spinner-animation {
+    0% {
+        transform: translateX(0) rotate(45deg) scale(0);
+    }
+
+    50% {
+        transform: translateX(-233%) rotate(45deg) scale(1);
+    }
+
+    100% {
+        transform: translateX(-466%) rotate(45deg) scale(0);
+    }
+}

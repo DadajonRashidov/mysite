@@ -1,0 +1,92 @@
+$dark: #1b1b1d;
+$dark-lighter: #64646a;
+$danger: #9009;
+
+$light: #ffffff;
+$light-dark: #eeeff1;
+$light-medium: #f3f4f5;
+
+$xx-large-screen: 1600px;
+$x-large-screen: 1350px;
+$large-screen: 1100px;
+$medium-screen: 900px;
+$small-screen: 750px;
+
+$link-color: #007bff;
+
+// @media (max-width: $xx-large-screen) {
+// }
+// @media (max-width: $x-large-screen) {
+// }
+// @media (max-width: $large-screen) {
+// }
+// @media (max-width: $medium-screen) {
+// }
+// @media (max-width: $small-screen) {
+// }
+
+// ====================================================
+// ====================================================
+// MIXINS
+
+@mixin grid($columns: 12, $gap: 20px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: $gap;
+}
+
+// USAGE:
+// @include grid();
+// @include grid(3, 10px);
+
+@mixin flex(
+  $direction: row,
+  $justify: flex-start,
+  $align: flex-start,
+  $gap: 10px
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// USAGE:
+// @include flex();
+// @include flex(column, center, center);
+
+.hollow-dots-spinner {
+  height: 15px;
+  width: calc(30px * 3);
+  .dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 calc(15px / 2);
+    border: calc(15px / 5) solid $dark-lighter;
+    border-radius: 50%;
+    float: left;
+    transform: scale(0);
+    animation: hollow-dots-spinner-animation 1000ms ease infinite 0ms;
+    &:nth-child(1) {
+      animation-delay: calc(300ms * 1);
+    }
+    &:nth-child(2) {
+      animation-delay: calc(300ms * 2);
+    }
+    &:nth-child(3) {
+      animation-delay: calc(300ms * 3);
+    }
+  }
+}
+
+@keyframes hollow-dots-spinner-animation {
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

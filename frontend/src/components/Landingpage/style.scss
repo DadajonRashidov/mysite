@@ -1,0 +1,62 @@
+@import "../../assets/styles/settings";
+
+.landingpage-wrapper {
+  background-color: $light-dark;
+  padding: 50px 180px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .left {
+    h1 {
+      font-family: Jost;
+      font-size: 124px;
+      font-weight: 800;
+      line-height: 140px;
+      text-align: left;
+    }
+    span {
+      font-family: Jost;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 34.68px;
+      text-align: left;
+      color: $dark-lighter;
+      margin-top: 30px;
+    }
+    .btn-group-in-landingpage {
+      margin-top: 60px;
+      .btn-landingpageN1 {
+        background-color: $dark;
+        color: $light;
+        padding: 20px 35px;
+        font-family: Jost;
+        font-style: 20px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: $dark-lighter;
+        }
+      }
+      .btn-landingpageN2 {
+        margin-left: 40px;
+        color: $dark;
+        text-transform: uppercase;
+        text-decoration: underline;
+        font-size: 20px;
+        &:hover {
+          transform: scale(1.1);
+          text-shadow: 1px 1px 15px $dark, -1px -1px 15px $dark;
+        }
+        &:active {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+  .right {
+    align-self: flex-end;
+  }
+}

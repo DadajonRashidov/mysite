@@ -1,0 +1,61 @@
+@use "./assets/styles/resets";
+@import "./assets/styles/settings";
+
+body {
+  background-color: $light;
+
+  color: $dark;
+}
+
+p {
+  color: $light;
+}
+
+a,
+button:not(.close-btn),
+input {
+  border: none;
+  outline: none;
+  display: inline-block;
+  padding: 10px 20px;
+  color: $light;
+  text-decoration: none;
+}
+
+.warning-btn {
+  background-color: $light-dark;
+  box-shadow: 0 1px 10px $dark, -0 -1px 10px $dark;
+  border: 2px solid $dark;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 1px 1px 15px $dark, -1px -1px 15px $dark;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
+::selection {
+  background-color: $dark-lighter;
+  color: $light;
+}
+
+.toast-wrapper {
+  position: relative;
+  z-index: 9999;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: $dark-lighter;
+  border-radius: 10px;
+  border: 2px solid black;
+}
